@@ -1,0 +1,69 @@
+[
+  {
+    "type": "maze_move_by_line",
+    "message0": "%{BKY_MAZE_MOVE_BY_LINE}",
+    "previousStatement": null,
+    "nextStatement": null
+  },
+	{
+    "type": "maze_move",
+    "message0": "Move Forward %1",
+	"args0": [
+		{
+        "type": "input_value",
+        "name": "NUM",
+        "check": "Number"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null
+  },
+  {
+    "type": "maze_turn",
+    "message0": "%1 %2",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "DIRECTION",
+        "options": [
+          ["%{BKY_MAZE_TURN_RIGHT}", "RIGHT"],
+          ["%{BKY_MAZE_TURN_LEFT}", "LEFT"]
+        ]
+      },
+		{
+        "type": "input_value",
+        "name": "NUM",
+        "check": "Number"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null
+  },
+  {
+    "type": "maze_bool_access",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "ACCESS",
+        "options": [
+          ["%{BKY_MAZE_ACCESS_FRONT}", "FRONT"],
+          ["%{BKY_MAZE_ACCESS_RIGHT}", "RIGHT"],
+          ["%{BKY_MAZE_ACCESS_LEFT}", "LEFT"]
+        ]
+      }
+    ],
+    "output": "Boolean",
+    "colour": "%{BKY_MAZE_HUE}"
+  },
+  {
+    "type": "maze_reach_terminal",
+    "message0": "%{BKY_MAZE_REACH_TERMINAL}",
+    "output": "Boolean"
+  },
+  {
+    "type": "maze_line_below",
+    "message0": "%{BKY_MAZE_LINE_BELOW}",
+    "output": "Boolean"
+  }
+]
